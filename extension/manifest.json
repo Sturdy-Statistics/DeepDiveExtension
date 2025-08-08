@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Deepdive Search Extension",
+  "version": "1.0.4",
+  "description": "Adds Deepdive search buttons to Google search and academic article pages",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.google.com/search*",
+        "*://google.com/search*",
+        "*://arxiv.org/abs/*",
+        "*://dx.doi.org/*",
+        "*://doi.org/*",
+        "*://www.semanticscholar.org/paper/*",
+        "*://semanticscholar.org/paper/*",
+        "*://pubmed.ncbi.nlm.nih.gov/*",
+        "*://www.ncbi.nlm.nih.gov/pubmed/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}
