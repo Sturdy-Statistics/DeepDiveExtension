@@ -8,26 +8,10 @@
     gap: 6px;
 }
 
-.deepdive-close-button {
-    background: transparent;
-    border: none;
-    color: gray;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 0 6px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-    line-height: 1;
-}
-
-.deepdive-close-button:hover {
-    color: #ffaaaa;
-}
-
 
 .deepdive-popup-button {
-    background: linear-gradient(135deg, #326750 0%, #214535 100%);
-    border: 1px solid black;
+    background: linear-gradient(135deg, #faf4e8 0%, #f5efe3 100%);
+    border: 1px solid #326750;
     border-radius: 8px;
     padding: 8px 12px;
     cursor: pointer;
@@ -39,7 +23,8 @@
 }
 
 .deepdive-popup-button:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    background: rgba(50, 103, 80, 0.1); /* Subtle highlight on hover */
 }
 
 .deepdive-button-content {
@@ -54,12 +39,32 @@
 }
 
 .deepdive-text {
-    color: white;
+    text-decoration: none;
+    color: #326750;
+    transition: background 0.1s ease-in-out, text-decoration 0.1s ease-in-out; /* Smooth transition */
     font-size: 12px;
     font-weight: 500;
     white-space: nowrap;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    padding: 2px 5px; /* Add extra padding for larger highlight */
+    margin: -2px -5px; /* Counteracts padding to prevent size shift */
 }
+
+.deepdive-text:hover {
+    color: #1e4636; /* Darker green */
+}
+
+.deepdive-text::after {
+    content: "→";
+    display: inline-block;
+    margin-left: 0.3em;
+    transition: transform 0.2s ease-in-out; /* smooth hover effect */
+}
+
+.deepdive-popup-wrapper:hover .deepdive-text::after {
+    transform: translateX(3px); /* moves arrow slightly when parent is hovered */
+}
+
 
 /* Animation for appearance */
 .deepdive-popup-wrapper {

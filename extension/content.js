@@ -8,30 +8,15 @@ function createDeepdiveButton(url) {
   const content = document.createElement('div');
   content.className = 'deepdive-button-content';
 
-  const icon = document.createElement('span');
-  icon.className = 'deepdive-icon';
-  icon.textContent = '🔍';
-
   const text = document.createElement('span');
   text.className = 'deepdive-text';
-  text.textContent = 'Deep Dive';
+  text.textContent = '🔍 Deep Dive';
 
-  content.appendChild(icon);
   content.appendChild(text);
   button.appendChild(content);
   button.onclick = () => window.open(url, '_blank', 'noopener,noreferrer');
 
-  // Add close (×) button
-  const close = document.createElement('button');
-  close.className = 'deepdive-close-button';
-  close.textContent = '×';
-  close.onclick = (e) => {
-    e.stopPropagation(); // Prevent triggering the Deep Dive link
-    wrapper.remove();    // Remove the entire wrapper
-  };
-
   wrapper.appendChild(button);
-  wrapper.appendChild(close);
   return wrapper;
 }
 
