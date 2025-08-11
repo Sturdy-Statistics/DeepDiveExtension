@@ -1,6 +1,6 @@
 # Privacy Policy for Deepdive Search Extension
 
-**Last Updated**: [Date]
+**Last Updated**: 2025-08-11
 
 ## Overview
 The Deepdive Search Extension helps users quickly access analysis tools for search results and academic articles. This privacy policy explains how we handle your data.
@@ -20,7 +20,7 @@ We use this data solely to:
 ## Data Storage and Sharing
 - **Local Processing**: All data processing happens locally in your browser
 - **No Storage**: We do not store, save, or retain any of your data
-- **Third-Party Sharing**: When you click our buttons, your search query or current URL is sent to sturdystatistics.com for analysis (subject to their privacy policy)
+- **Third-Party Sharing**: When you click our buttons, your search query or current URL is sent to platform.sturdystatistics.com to kick off a deep dive analysis (subject to their privacy policy). Your data is not tied to you or saved beyond generating the deep dive.
 
 ## Data Security
 - Data is processed temporarily and only when you're on supported websites
@@ -34,13 +34,12 @@ We use this data solely to:
 
 ## Third-Party Services
 When you use our extension buttons, you'll be directed to:
-- platform.sturdystatistics.com (for search analysis)
-- sturdystatistics.com (for citation network analysis)
+- platform.sturdystatistics.com
 
 These services have their own privacy policies.
 
 ## Contact
-For questions about this privacy policy, contact: [your-email@domain.com]
+For questions about this privacy policy, contact: [info@sturdystatistics.com]
 
 ## Changes
 We may update this privacy policy. Check the "Last Updated" date for the most recent version.
