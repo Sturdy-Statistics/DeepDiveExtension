@@ -74,7 +74,7 @@
         content.appendChild(label);
         btn.appendChild(content);
 
-        btn.title = 'Ctrl-click for fast mode';
+        btn.title = '"f"-click for fast mode';
 
         btn.onclick = () => {
             const url = currentDeepDiveUrl();
@@ -120,7 +120,7 @@
     }
 
     function setupKeyListeners() {
-        // Toggle while Ctrl is held
+        // Toggle while f is held
         document.addEventListener('keydown', (e) => {
             // Skip if user is typing in an editable field
             const t = e.target;
@@ -128,7 +128,7 @@
             if (editing) return;
 
             // Only toggle on initial press and not on key repeat
-            if ((e.key === 'Control') && !fastMode) {
+            if ((e.key.toLowerCase() === 'f' ) && !fastMode) {
                 setFastMode(true);
             }
         }, { capture: false });
@@ -139,7 +139,7 @@
             const editing = t && t.closest('input, textarea, [contenteditable="true"]');
             if (editing) return;
 
-            if (e.key === 'Control' && fastMode) {
+            if ((e.key.toLowerCase() === 'f' ) && fastMode) {
                 setFastMode(false);
             }
         }, { capture: false });
