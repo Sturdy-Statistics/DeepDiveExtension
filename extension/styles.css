@@ -1,30 +1,139 @@
+:root {
+  /* -------- base neutrals: warm beige scale -------- */
+  --beige-50:  #fdfbf7; /* paper white */
+  --beige-100: #faf4e8;
+  --beige-200: #f5efe3; /* base */
+  --beige-300: #eee4d2;
+  --beige-400: #e7d8c4; /* emph */
+  --beige-500: #dcc8ad;
+  --beige-600: #c9b291;
+  --beige-700: #a38d6e;
+  --beige-800: #7c6a51;
+  --beige-900: #4e4234;
+
+  /* accent (green) */
+  --accent-900: #002814;
+  --accent-800: #00331a;
+  --accent-700: #004225;
+  --accent-600: #326750; /* base */
+  --accent-500: #1f7a53;
+  --accent-400: #2f9e6e;
+  --accent-300: #56c092;
+  --accent-200: #8bd7b5;
+  --accent-100: #e8f7ef;
+  --accent-50:  #ebf5ed;
+
+  /* shadows */
+  --shadow-1: 0 4px 12px rgba(0,0,0,0.12);
+  --shadow-2: 0 6px 16px rgba(0,0,0,0.24);
+
+  /* text colors */
+  --text:        var(--accent-600);
+  --muted-text:  var(--accent-400);
+  --invert-text: var(--accent-50);
+  --text-hover:  var(--accent-900);
+
+  /* surfaces */
+  --surface:       var(--beige-200);
+  --border:        var(--beige-400);
+  --border-hover:  var(--accent-600);
+
+  --surface-hover: var(--accent-100);
+  --surface-focus: var(--accent-700);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* text */
+        --text:        var(--beige-400);
+        --muted-text:  var(--beige-500);
+        --invert-text: var(--beige-100);
+        --text-hover:  var(--beige-200);
+
+        /* surfaces (warm near-black) */
+        --surface:       var(--accent-700);
+        --surface-hover: var(--accent-600);
+        --surface-focus: var(--accent-500);
+
+        /* borders */
+        --border:       var(--accent-800);
+        --border-hover: var(--accent-700);
+
+        /* shadows (darker + softer spread for dark UI) */
+        --shadow-1: 0 8px 18px rgba(0,0,0,0.45);
+        --shadow-2: 0 12px 28px rgba(0,0,0,0.55);
+    }
+}
+
+/* set colors */
+
+.deepdive-popup-button {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-1);
+    transition: all 0.3s ease-in-out;
+}
+.deepdive-popup-button:hover {
+    background: var(--surface-hover);
+    color: var(--text-hover);
+    border: 1px solid var(--border-hover);
+    box-shadow: var(--shadow-2);
+}
+.deepdive-popup-button:active {
+    background: var(--surface-focus);
+    color: var(--invert-text);
+    border: 1px solid var(--border-hover);
+    box-shadow: var(--shadow-2);
+}
+
+
+.deepdive-close-button {
+    background: transparent;
+    color: var(--muted-text);
+    border: 0;
+    transition: all 0.3s ease-in-out;
+}
+.deepdive-close-button:hover {
+    color: var(--text-hover);
+}
+.deepdive-close-button:active {
+    color: var(--invert-text);
+}
+
+
+/* set layout */
+
 .deepdive-popup-wrapper {
+    z-index: 9999;
+
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 9999;
+
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
+.deepdive-close-button {
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 6px;
+    line-height: 1;
+}
 
 .deepdive-popup-button {
-    background: linear-gradient(135deg, #faf4e8 0%, #f5efe3 100%);
-    border: 1px solid #326750;
+    min-width: 120px;
     border-radius: 8px;
     padding: 8px 12px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    min-width: 140px;
-    backdrop-filter: blur(10px);
-}
 
-.deepdive-popup-button:hover {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    background: rgba(50, 103, 80, 0.1); /* Subtle highlight on hover */
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    font-weight: bold;
+    font-size: 12px;
 }
 
 .deepdive-button-content {
@@ -35,30 +144,22 @@
 }
 
 .deepdive-icon {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .deepdive-text {
     text-decoration: none;
-    color: #326750;
-    transition: background 0.1s ease-in-out, text-decoration 0.1s ease-in-out; /* Smooth transition */
-    font-size: 12px;
-    font-weight: 500;
     white-space: nowrap;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    padding: 2px 5px; /* Add extra padding for larger highlight */
-    margin: -2px -5px; /* Counteracts padding to prevent size shift */
-}
 
-.deepdive-text:hover {
-    color: #1e4636; /* Darker green */
+    padding: 2px 5px;  /* Add extra padding for larger highlight */
+    margin: -2px -5px; /* Counteracts padding to prevent size shift */
 }
 
 .deepdive-text::after {
     content: "→";
     display: inline-block;
     margin-left: 0.3em;
-    transition: transform 0.2s ease-in-out; /* smooth hover effect */
+    transition: transform 0.3s ease-in-out; /* smooth hover effect */
 }
 
 .deepdive-popup-wrapper:hover .deepdive-text::after {
