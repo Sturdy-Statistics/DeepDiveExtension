@@ -27,3 +27,6 @@ The Deep Dive can be kicked off anytime you view a research paper from
 * [Semantic Scholar](https://www.semanticscholar.org/)
 
 
+# Fast Mode
+
+If you hold down the "f" key while clicking on the **Deep Dive** link, it kicks off your model in fast mode. This mode will pull about half as much data and train a less advanced model. However it will also run 2-5x faster than the standard mode.
