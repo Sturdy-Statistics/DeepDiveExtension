@@ -5,7 +5,7 @@
 ## Overview
 
 The **Sturdy Statistics Deep Dive** browser extension adds a “Deep Dive” button to certain supported websites — including Google Search, arXiv, DOI.org, Semantic Scholar, and PubMed — allowing you to quickly open those pages in a Sturdy Statistics analysis view. 
-Holding the Control key while clicking activates “fast mode.”
+Holding the "f" key while clicking activates “fast mode.”
 
 We take your privacy seriously. 
 This extension processes all data locally in your browser, and only sends data to our servers when you explicitly click the button.
