@@ -34,9 +34,14 @@
     let textEl = null;
     let currentEngine = null;
 
+    function getGoogleSearchQuery() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('q') || '';
+    }
+
     // Construct a URL for Sturdy Statistics Website
     function currentDeepDiveUrl() {
-        const q = encodeURIComponent(window.location.href);
+        const q = encodeURIComponent(currentEngine === 'google' ? getGoogleSearchQuery() : window.location.href);
         const base = 'https://sturdystatistics.com/deepdive';
         const fast = fastMode ? 1 : 0;
         return `${base}?fast=${fast}&q=${q}&engine=${currentEngine}`;
