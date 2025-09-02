@@ -4,7 +4,6 @@
     "version": "1.0.5",
     "description": "Automatically launch DeepDives from compatible web pages",
     "permissions": [
-        "activeTab"
     ],
     "content_scripts": [
         {
