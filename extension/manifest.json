@@ -2,9 +2,8 @@
     "manifest_version": 3,
     "name": "DeepDive Search Extension",
     "version": "1.0.5",
-    "description": "Automatically launch DeepDives from compatible web pages",
+    "description": "Easily launch deepdives natively integrated with your research workflow.",
     "permissions": [
-        "activeTab"
     ],
     "content_scripts": [
         {
